@@ -7,36 +7,39 @@
 
         <h1 class="m-5">Les News !</h1>
 
-        {% for new in news  %}
-            {% for info in new  %}
+        {{ dump(news) }}
 
-            <div class="card mb-3">
+        {% for key, new in news  %}
 
-                {% if info.image is defined and info.image is not null %}
-                    <img src="{{ info.image }}" class="card-img-top" alt="{{ info.title }}">
-                {% elseif info.urlToImage is defined and info.urlToImage is not null %}
-                    <img src="{{ info.urlToImage }}" class="card-img-top" alt="{{ info.title }}">
-                {% elseif info.image_url is defined and info.image_url is not null %}
-                    <img src="{{ info.image_url }}" class="card-img-top" alt="{{ info.title }}">
+            {% for key2, oneNew in new %}
+
+                <div class="card mb-3" id=>
+
+                {% if oneNew.image is defined and oneNew.image is not null %}
+                    <img src="{{ oneNew.image }}" class="card-img-top" alt="{{ oneNew.title }}">
+                {% elseif oneNew.urlToImage is defined and oneNew.urlToImage is not null %}
+                    <img src="{{ oneNew.urlToImage }}" class="card-img-top" alt="{{ oneNew.title }}">
+                {% elseif oneNew.image_url is defined and oneNew.image_url is not null %}
+                    <img src="{{ oneNew.image_url }}" class="card-img-top" alt="{{ oneNew.title }}">
                 {% else %}
-                    <img src="https://via.placeholder.com/700x100" class="card-img-top" alt="{{ info.title }}">
+                    <img src="https://via.placeholder.com/700x100" class="card-img-top" alt="{{ oneNew.title }}">
                 {% endif %}
 
                 <div class="card-body">
-                    <h5 class="card-title">{{ info.title }}</h5>
-                    <p class="card-text">{{ info.description }}</p>
+                    <a href="new/{{ key }}/{{ key2 }}"><h5 class="card-title">{{ oneNew.title }}</h5></a>
+                    <p class="card-text">{{ oneNew.description }}</p>
 
-                    {% if info.published_at is defined %}
-                        <p class="card-text"><small class="text-muted">{{ info.published_at }}</small></p>
-                    {% elseif info.publishedAt is defined %}
-                        <p class="card-text"><small class="text-muted">{{ info.publishedAt }}</small></p>
-                    {% elseif info.pubDate is defined %}
-                        <p class="card-text"><small class="text-muted">{{ info.pubDate }}</small></p>
+                    {% if oneNew.published_at is defined %}
+                        <p class="card-text"><small class="text-muted">{{ oneNew.published_at }}</small></p>
+                    {% elseif oneNew.publishedAt is defined %}
+                        <p class="card-text"><small class="text-muted">{{ oneNew.publishedAt }}</small></p>
+                    {% elseif oneNew.pubDate is defined %}
+                        <p class="card-text"><small class="text-muted">{{ oneNew.pubDate }}</small></p>
                     {% endif %}
 
                 </div>
             </div>
-        {% endfor %}
+            {% endfor %}
         {% endfor %}
 
     </div>

@@ -17,8 +17,10 @@ class NewController extends AbstractController
         ]);
     }
 
-    #[Route('/new/{id<\d+>}', name: 'new')]
-    public function getNewId(int $id): Response {
-        return $this->render('new/new.html.twig', ['id' => $id]);
+    #[Route('/new/{api<\d+>}/{id<\d+>}', name: 'new')]
+    public function getNewId(int $api, int $id, NewsAgregator $newsAgregator): Response {
+        $allNews = $newsAgregator->AllNews();
+        $oneNew = $allNews[$api][$id];
+        return $this->render('new/new.html.twig', ["oneNew" => $oneNew]);
     }
 }

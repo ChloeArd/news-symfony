@@ -11,8 +11,6 @@ class New2Service {
     function callAPI(): mixed {
         $queryString = http_build_query([
             'q' => 'Apple',
-            'from' => '2022-02-10',
-            'sortBy' => 'popularity',
             'apiKey' => '8cf5c5824cf94666a89363d0692b897d',
             'language' => 'fr',
         ]);
