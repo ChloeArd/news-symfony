@@ -54,10 +54,10 @@ class NewController extends AbstractController {
         }
 
         if ($success) {
-            return new Response("<div>L'API a été ajouté avec succès !</div>");
+            return new Response("<h1>L'API a été ajouté avec succès !</h1>");
         }
 
-        return new Response("<div>Erreur en ajoutant l'API !</div>");
+        return new Response("<h1>Erreur en ajoutant l'API !</h1>");
         //return $this->render('new/add.html.twig');
         }
 }
