@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Service\CallApiService;
 use App\Service\NewsAgregator;
 use Doctrine\DBAL\Driver\OCI8\Exception\Error;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
