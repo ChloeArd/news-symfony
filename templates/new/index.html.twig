@@ -5,24 +5,23 @@
 {% block body %}
     <div class="container py-5">
 
-        <h1 class="m-5">Les News !</h1>
+        <h1 class="my-5">Les News !</h1>
 
         {{ dump(news) }}
-
         {% for key, new in news  %}
 
             {% for key2, oneNew in new %}
 
-                <div class="card mb-3" id=>
+                <div class="card my-5 containerOneNew">
 
                 {% if oneNew.image is defined and oneNew.image is not null %}
-                    <img src="{{ oneNew.image }}" class="card-img-top" alt="{{ oneNew.title }}">
+                    <img src="{{ oneNew.image }}" class="image" alt="{{ oneNew.title }}">
                 {% elseif oneNew.urlToImage is defined and oneNew.urlToImage is not null %}
-                    <img src="{{ oneNew.urlToImage }}" class="card-img-top" alt="{{ oneNew.title }}">
+                    <img src="{{ oneNew.urlToImage }}" class="image" alt="{{ oneNew.title }}">
                 {% elseif oneNew.image_url is defined and oneNew.image_url is not null %}
-                    <img src="{{ oneNew.image_url }}" class="card-img-top" alt="{{ oneNew.title }}">
+                    <img src="{{ oneNew.image_url }}" class="image" alt="{{ oneNew.title }}">
                 {% else %}
-                    <img src="https://via.placeholder.com/700x100" class="card-img-top" alt="{{ oneNew.title }}">
+                    <img src="https://via.placeholder.com/400x400" class="image" alt="{{ oneNew.title }}">
                 {% endif %}
 
                 <div class="card-body">
