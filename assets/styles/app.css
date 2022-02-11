@@ -43,3 +43,18 @@ h1 {
 .para {
     font-size: 25px;
 }
+
+.button_blue {
+    background-color: #5eb5e0;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    border: none;
+    box-shadow: 5px 5px 10px gray;
+    text-decoration: none;
+}
+
+.button_blue:hover {
+    background-color: #469bc5;
+    color: white;
+}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une API d'actualités{% endblock %}
+
+{% block body %}
+
+    <div class="container py-5">
+
+        <h1>Ajouter une API d'actualités</h1>
+
+        <div class="m-3">
+            <label for="urlApi" class="form-label">Url de l'API</label>
+            <input type="url" class="form-control" id="urlApi">
+        </div>
+        <div class="m-3">
+           <label for="nameApi" class="form-label">Indiquer le nom pour récupérer les valeurs à cet endroit</label>
+            <input type="text" class="form-control" id="nameApi">
+        </div>
+        <div class="flexCenter">
+            <input class="button_blue" type="submit" value="Ajouter">
+        </div>
+
+    </div>
+{% endblock %}
+
+
